@@ -11,4 +11,4 @@ echo '$2 : Database Username - '$2
 echo '$3 : Database Password'
 
 # executable command to restore hosted database
-mongoimport -h $1 -d motocross -c documents -u $2 -p $3 --type json --file laptimes/allmoto.json 
+mongoimport -h $1 -d $2 -c documents -u $3 -p $4 --type json --file laptimes/allmoto.json
