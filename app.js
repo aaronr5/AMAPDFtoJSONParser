@@ -22,7 +22,7 @@ require('dotenv').config();
 // Any race that has not occured returns 404
 function urlArr() {
 	const urlsToGet = [];
-	for(let i = 1605; i < 1665; i += 5) {
+	for(let i = 1705; i < 1765; i += 5) {
 		for(let n = 1; n < 3; n++) {
 			urlsToGet.push("http://americanmotocrossresults.com/xml/MX/events/M"+ i +"/M"+ n +"F1RID.pdf");
 			urlsToGet.push("http://americanmotocrossresults.com/xml/MX/events/M"+ i +"/M"+ n +"F2RID.pdf");
@@ -40,7 +40,7 @@ function getPDFs() {
 
 
 // Writing for the PDF parser
-// Requires a file 
+// Requires a file
 function writePDFs(pdfs) {
 	let promises = pdfs.map((pdf, index) => {
 		return new Promise((resolve, reject) => {
@@ -107,5 +107,3 @@ getPDFs()
 	.then(pathToJSON => execFiles.toDB(pathToJSON))
 	.then(success => console.log(success+' Good To Go!'))
 	.catch(err => console.error(err));
-
-
